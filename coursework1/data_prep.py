@@ -1,5 +1,4 @@
 import pandas as pd
-#pep3107
 def direct_link(link):
     """transform sharelink from google drive into a direct link
     
