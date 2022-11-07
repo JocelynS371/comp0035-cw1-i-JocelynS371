@@ -31,4 +31,8 @@ def main():
     df_G1=pd.read_csv(url_G1)
     df_UK1=pd.read_csv(url_UK1)
     df_UK2=pd.read_csv(url_UK2)
+    print(df_F.shape)
+    print(df_G1.shape)
+    print(df_UK1.shape)
+    print(df_UK2.shape)
 main()
