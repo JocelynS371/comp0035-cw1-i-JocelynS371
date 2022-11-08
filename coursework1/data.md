@@ -40,7 +40,7 @@ The info method showed no null value in dataframe F, however, A isnull check is 
 
 Before we handle the data further, we need to consider seperating dataset F into F1 and F2. This is because the data source stated that data from 2 mooring site(F1 and F2) is merged into a single dataset F.
 After inspecting the location data in dataset F, I concluded that the location is too close together to seperate. The equipment deployment diagram in the data source supported my conclusion.  
- ![Equipment_deployment](\Dataset\Angmagssalik_Mooring_Deployment.png)
+ ![Equipment_deployment](Dataset/Angmagssalik_Mooring_Deployment.png)
 We can see from the diagram that the depth at the 2 location are the same and they are only 9km apart from each other according to ressearch. 
 
 ## Dropping unnnessary data
@@ -79,7 +79,7 @@ The function used is  to_numeric from the panda library. Using the parameter dow
 
 I attempted to spot outlier using the describe function, however, I found the output to be too vague. Therefore, instead of the function, I wrote a for loop to create a histogram for each column in each dataset. There is no obvious outlier and all the continous data followed a rough normal disturbution shape.   
 A noticeable point is that the data is missing in some date:  
-![Date_Hist](coursework1\Dataset\Date_Hist.jpg)   
+![Date_Hist](Dataset/Date_Hist.jpg)   
 This is true for all the data set. Upon further ressearch no explanation have been found. However, the most logical conclusion is that there was an equipment broke down or mantinence period due fauling caused by saltwater. These missing values could also have been null values ommitted. The missing dates should not matter too much as the data set is sufficiently large to cover any missing values.
 
 ## Exporting the datasets
