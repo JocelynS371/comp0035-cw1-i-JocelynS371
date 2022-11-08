@@ -94,5 +94,5 @@ def main():
             print(n)
             plt.hist(df_F[n])
             plt.show()
-    pd.concat([df_F,df_G1,df_UK1,df_UK2]).to_csv('coursework1\cleaned_data.csv',header=True,index=False)
+    pd.concat([df_F,df_G1,df_UK1,df_UK2]).to_csv('coursework1\data_set_prepared.csv',header=True,index=False)
 main()

@@ -24,3 +24,6 @@ Before you submit the coursework:
 
 1. Update this README.md with any additional guidance that may be required to allow your project code to run.
 2. Update requirements.txt with any additional python libraries used in your project.
+
+## Note on Coursework 1
+My dataset is too large. It was mentioned in data.md and a zipped version is on github. However, if that was missed, you can also find it in teams under the channel Tutorial group 01 14-15 CG. The file name is my github username and student number.
