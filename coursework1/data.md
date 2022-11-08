@@ -76,6 +76,8 @@ Our data, in particular temperture and salinity is measured to a very high signi
 However, it might be appropiate to store date, now rounded down, into an interger type. This reduce the possible error and is convinent.
 The function used is from to_numeric. Using the parameter downcast, we converted the floating date into a interger date.
 
-## exploring data
+## Exploring data
 
-I attempted to spot outlier using the describe function, however, I found the output to be too vague. Therefore, instead of the function, I wrote a for loop to create a histogram for each column in each dataset. There is no obvious outlier and all the continous data followed a rough normal disturbution shape.
+I attempted to spot outlier using the describe function, however, I found the output to be too vague. Therefore, instead of the function, I wrote a for loop to create a histogram for each column in each dataset. There is no obvious outlier and all the continous data followed a rough normal disturbution shape.   
+A noticeable point is that the data is missing in some date:  
+![Date_Hist]
