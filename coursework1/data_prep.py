@@ -1,13 +1,15 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 def direct_link(link):
+    
     """transform sharelink from google drive into a direct link
     
         Keyword arguments:
         link -- A string. The url needed to be pharsed
-        
-        Output a direct link
+        Return:
+        link -- A direct download link
     """
+    
     link=link.replace("file/d/","uc?id=")
     link_1=link.split("/view")
     link_1.pop(1)
@@ -22,7 +24,6 @@ def main():
     url_G1_share='https://drive.google.com/file/d/1tNn90Z1GpGBemK7_Aj_ILOtGOb6LZF6z/view?usp=share_link'
     url_UK1_share='https://drive.google.com/file/d/1SibXF_igCgND_RUaSJiki9L311LSjZHD/view?usp=share_link'
     url_UK2_share='https://drive.google.com/file/d/1C5ajK4VHf2dac_fNS_ffFWZ1YcrDgP5M/view?usp=share_link'
-    
     url_F=direct_link(url_F_share)
     url_G1=direct_link(url_G1_share)
     url_UK1=direct_link(url_UK1_share)
@@ -45,19 +46,16 @@ def main():
     df_F=df_F.drop(nulls_F.index)
     print(nulls_F)
     print(df_F.info(verbose=True))
-    
     print(df_G1.info(verbose=True))
     nulls_G1 = df_G1[df_G1.isnull().any(axis=1)]
     print(nulls_G1)
     df_G1=df_G1.drop(nulls_G1.index)
     print(df_G1.info(verbose=True))
-    
     print(df_UK1.info(verbose=True))
     nulls_UK1 = df_UK1[df_UK1.isnull().any(axis=1)]
     df_UK1=df_UK1.drop(nulls_UK1.index)
     print(nulls_UK1)
     print(df_UK1.info(verbose=True))
-    
     print(df_UK2.info(verbose=True))
     nulls_UK2 = df_UK2[df_UK2.isnull().any(axis=1)]
     df_UK2=df_UK2.drop(nulls_UK2.index)
@@ -69,18 +67,20 @@ def main():
     print("Latitude in dataset")
     print(df_F["Latitude"].unique())
     
-    df_F["Serial_date_number_base_date_1_January_0000"]=round(df_F["Serial_date_number_base_date_1_January_0000"])
-    df_F=df_F.drop_duplicates(subset="Serial_date_number_base_date_1_January_0000",keep='first')
-    df_F["Serial_date_number_base_date_1_January_0000"]=pd.to_numeric(df_F["Serial_date_number_base_date_1_January_0000"],downcast='integer')
-    df_G1["Serial_date_number_base_date_1_January_0000"]=round(df_G1["Serial_date_number_base_date_1_January_0000"])
-    df_G1=df_G1.drop_duplicates(subset="Serial_date_number_base_date_1_January_0000",keep='first')
-    df_G1["Serial_date_number_base_date_1_January_0000"]=pd.to_numeric(df_G1["Serial_date_number_base_date_1_January_0000"],downcast='integer')
-    df_UK1["Serial_date_number_base_date_1_January_0000"]=round(df_UK1["Serial_date_number_base_date_1_January_0000"])
-    df_UK1=df_UK1.drop_duplicates(subset="Serial_date_number_base_date_1_January_0000",keep='first')
-    df_UK1["Serial_date_number_base_date_1_January_0000"]=pd.to_numeric(df_UK1["Serial_date_number_base_date_1_January_0000"],downcast='integer')
-    df_UK2["Serial_date_number_base_date_1_January_0000"]=round(df_UK2["Serial_date_number_base_date_1_January_0000"])
-    df_UK2=df_UK2.drop_duplicates(subset="Serial_date_number_base_date_1_January_0000",keep='first')
-    df_UK2["Serial_date_number_base_date_1_January_0000"]=pd.to_numeric(df_UK2["Serial_date_number_base_date_1_January_0000"],downcast='integer')
+    date="Serial_date_number_base_date_1_January_0000"
+    df_F[date]=round(df_F[date])
+    df_F=df_F.drop_duplicates(subset=date,keep='first')
+    df_F[date]=pd.to_numeric(df_F[date],downcast='integer')
+    df_G1[date]=round(df_G1[date])
+    df_G1=df_G1.drop_duplicates(subset=date,keep='first')
+    df_G1[date]=pd.to_numeric(df_G1[date],downcast='integer')
+    df_UK1[date]=round(df_UK1[date])
+    df_UK1=df_UK1.drop_duplicates(subset=date,keep='first')
+    df_UK1[date]=pd.to_numeric(df_UK1[date],downcast='integer')
+    df_UK2[date]=round(df_UK2[date])
+    df_UK2=df_UK2.drop_duplicates(subset=date,keep='first')
+    df_UK2[date]=pd.to_numeric(df_UK2[date],downcast='integer')
+    
     print("Dataframe size after removing null values and duplicate date:")
     print(df_F.shape)
     print(df_G1.shape)
@@ -94,5 +94,6 @@ def main():
             print(n)
             plt.hist(df_F[n])
             plt.show()
-    pd.concat([df_F,df_G1,df_UK1,df_UK2]).to_csv('coursework1\data_set_prepared.csv',header=True,index=False)
+    filename='coursework1\data_set_prepared.csv'
+    pd.concat([df_F,df_G1,df_UK1,df_UK2]).to_csv(filename,header=True,index=False)
 main()
