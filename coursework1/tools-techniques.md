@@ -15,3 +15,4 @@ Evidence on moodle
 I mentioned in project-method that I am using a kanban board to help with organisation. I am using a online board creator called Trello. The link to the board is:https://trello.com/invite/b/gPh4DxAW/ATTIff050d80af19bd038bdaae6ccc4f72868C5A5D5B/kanban. A screenshot to the board looks like:  
 ![Kanban board](Dataset/KanBan.jpg)
 There is 4 section rather than 3 in the tradditional set up because when I only had 3, the task fill up the done column and look clustered. Archiving the done task also take away from the sense of acheviement so a "Past deadline" column is added. This is just a personal modification so it suit me better. 
+There is also no deadline for the earlier phase, such as business need because I moved back and forth between them.
