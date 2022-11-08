@@ -80,4 +80,13 @@ The function used is from to_numeric. Using the parameter downcast, we converted
 
 I attempted to spot outlier using the describe function, however, I found the output to be too vague. Therefore, instead of the function, I wrote a for loop to create a histogram for each column in each dataset. There is no obvious outlier and all the continous data followed a rough normal disturbution shape.   
 A noticeable point is that the data is missing in some date:  
-![Date_Hist]
+![Date_Hist](coursework1\Dataset\Date_Hist.jpg)   
+This is true for all the data set. Upon further ressearch no explanation have been found. However, the most logical conclusion is that there was an equipment broke down or mantinence period due fauling caused by saltwater. The missing dates should not matter too much as the data set is sufficiently large to cover any missing values.
+
+## Exporting the datasets
+Now that the data is cleaned and prepared. It can be combined into 1 file for later use. I chose to save it as a csv file as it would be the most versitile and can be comprehended by bith humans and computers easily.   
+The function used is concat from the panda library. And the method, to_csv
+```python 
+    pd.concat([df_F,df_G1,df_UK1,df_UK2]).to_csv('coursework1\cleaned_data.csv',header=True,index=False)
+```   
+Now that the data are cleaned and in the same csv, the data preparation is done. All relevant files can be found on git hub or in the zip file handed in.
