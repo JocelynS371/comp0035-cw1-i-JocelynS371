@@ -41,8 +41,9 @@ The info method showed no null value in dataframe F, however, A isnull check is 
 
 Before we handle the data further, we need to consider seperating dataset F into F1 and F2. This is because the data source stated that data from 2 mooring site(F1 and F2) is merged into a single dataset F.
 After inspecting the location data in dataset F, I concluded that the location is too close together to seperate. The equipment deployment diagram in the data source supported my conclusion.  
- ![Equipment] Angmagssalik_Mooring_Deployment.png
-  
+ ![Equipment_deployment](\Dataset\Angmagssalik_Mooring_Deployment.png)
+We can see from the diagram that the depth at the 2 location are the same and they are only 9km apart from each other according to ressearch. 
+
 ## Dropping unnnessary data
 
 Considering that ocean current change on seasonal or yearly timeframe rather than an hourly basis, I decided to keep only 1 data entry per day. Because the date is entered as serial date based 1,Jan,0000. I rounded the number to interger and droped duplicate   
@@ -75,3 +76,6 @@ Our data, in particular temperture and salinity is measured to a very high signi
 However, it might be appropiate to store date, now rounded down, into an interger type. This reduce the possible error and is convinent.
 The function used is from to_numeric. Using the parameter downcast, we converted the floating date into a interger date.
 
+## exploring data
+
+I attempted to spot outlier using the describe function, however, I found the output to be too vague. Therefore, instead of the function, I wrote a for loop to create a histogram for each column in each dataset. There is no obvious outlier and all the continous data followed a rough normal disturbution shape.
