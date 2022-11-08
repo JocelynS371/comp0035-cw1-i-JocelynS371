@@ -41,7 +41,7 @@ The info method showed no null value in dataframe F, however, A isnull check is 
 Before we handle the data further, we need to consider seperating dataset F into F1 and F2. This is because the data source stated that data from 2 mooring site(F1 and F2) is merged into a single dataset F.
 After inspecting the location data in dataset F, I concluded that the location is too close together to seperate. The equipment deployment diagram in the data source supported my conclusion.  
  ![Equipment_deployment](Dataset/Angmagssalik_Mooring_Deployment.png)
-We can see from the diagram that the depth at the 2 location are the same and they are only 9km apart from each other according to ressearch. 
+We can see from the diagram that the depth at the 2 location are the same and they are only 9km apart from each other according to ressearch. There is also no need to seperate the location too clearly since the location information is attached to the data as longtitude and latitude data.
 
 ## Dropping unnnessary data
 
