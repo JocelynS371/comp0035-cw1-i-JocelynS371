@@ -14,8 +14,10 @@ def test_add_item():
     i1 = Item("Warburtons", "Toastie", "800g white sliced loaf", decimal.Decimal('1.52'))
     b=Basket()
     b.add_item(i1, 1)
-    assert b.is_empty==False
-    assert b.get_total_cost==1.52
+    empty=b.is_empty()
+    total=b.get_total_cost()
+    assert empty==False
+    assert total==1.52
     print(i1)
 test_add_item()
 
