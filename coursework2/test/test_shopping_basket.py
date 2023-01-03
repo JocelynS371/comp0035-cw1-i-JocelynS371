@@ -2,6 +2,10 @@ import pytest
 from coursework2.src.shopping_basket import Basket
 from coursework2.src.shopping_basket import Item
 
+import decimal
+from decimal import Decimal
+from reprlib import recursive_repr
+
 def test_add_item():
     """ Given item entered is valid, 
     When item is added to basket, 
