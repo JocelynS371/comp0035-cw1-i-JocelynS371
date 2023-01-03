@@ -1,0 +1,40 @@
+# Testing Shoping basket
+
+## Defining Tests
+To determine what senerio I should test for, I decided to brainstorm some user stories.   
+### User Stories   
+1. **As a customer**, **I want to** add item ,**so that I can** put all item I want in the basket   
+
+2. **As a customer**, **I want to** remove item, **so that I can** ensure only items I want is in the basket  
+
+3. **As a customer**, **I want to** see the description of an item in the basket, **so that I can** check if I have the right item.   
+
+4. **As a customer**, **I want to** see list of item, **so that I can** check I am not buying too much
+
+5. **As a customer**, **I want to** see the total price of item in basket, **so that I can** check that I am not over spending.
+
+6. **As a customer**, **I want to** check if the basket is empty, **so that I can** prepare for the next shopping trip.   
+
+7. **As a customer**, **I want to** get a warning when I entered a wrong input, **so that I can** find the mistake I made   
+
+With these 7 user stories, I have decided to define my test based on these stories.
+Some of these stories are similar, for example number 1 and 2, it would be a good place to use an fixture to make the testing process simpler. 
+
+### Given-When-That
+**Given** item entered is valid, **When** item is added to basket, **Then** ensure item is added to the list, **and** the new total is updated   
+**Given** item entered is valid, **When** item is removed from basket, **Then** ensure item is removed from the list, **and** the new total is updated   
+
+**Given** 
+
+## Writing Test
+
+### Using Fixture
+
+### Code Fixture
+
+### Code Coverage
+
+
+
+## Continous Intergration on Github
+
