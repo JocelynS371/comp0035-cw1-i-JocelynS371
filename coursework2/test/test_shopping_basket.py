@@ -17,8 +17,7 @@ def test_add_item():
     empty=b.is_empty()
     total=b.get_total_cost()
     assert empty==False
-    assert total==1.52
-    print(i1)
+    assert total==decimal.Decimal('1.52')
 test_add_item()
 
 
