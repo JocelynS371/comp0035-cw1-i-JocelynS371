@@ -18,6 +18,16 @@ def test_add_item():
     total=b.get_total_cost()
     assert empty==False
     assert total==decimal.Decimal('1.52')
-test_add_item()
+def test_reset():
+    """As a customer, I want to check if the basket is empty, so that I can prepare for the next shopping trip."
+    """
+    i1 = Item("Warburtons", "Toastie", "800g white sliced loaf", decimal.Decimal('1.52'))
+    b=Basket()
+    b.add_item(i1, 1)
+    empty=b.is_empty()
+    assert empty==False
+    b.reset()
+    empty=b.is_empty()
+    assert empty==True
 
 

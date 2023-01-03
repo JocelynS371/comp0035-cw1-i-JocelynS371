@@ -13,7 +13,7 @@ To determine what senerio I should test for, I decided to brainstorm some user s
 
 5. **As a customer**, **I want to** see the total price of item in basket, **so that I can** check that I am not over spending.
 
-6. **As a customer**, **I want to** check if the basket is empty, **so that I can** prepare for the next shopping trip.   
+6. **As a customer**, **I want to** reset the basket, **so that I can** prepare for the next shopping trip.   
 
 7. **As a customer**, **I want to** get a warning when I entered a wrong input, **so that I can** find the mistake I made   
 
@@ -21,11 +21,10 @@ With these 7 user stories, I have decided to define my test based on these stori
 Some of these stories are similar, for example number 1 and 2, it would be a good place to use an fixture to make the testing process simpler. 
 
 ### Given-When-That
-**Given** item entered is valid, **When** item is added to basket, **Then** ensure item is added to the list, **and** the new total is updated   
-**Given** item entered is valid, **When** item is removed from basket, **Then** ensure item is removed from the list, **and** the new total is updated   
-
-**Given** 
-
+**Given** item entered is valid, **When** item is added to basket, and **When** item is removed from basket, and **When** item is updated, **That** the basket is not empty, and **That** the total is correct
+This is the combinition of stories 1,2 and 5
+**Given** the basket is filled with item, **When** the basket is reset, **That** the basket becomes empty, and **That** the total cost is 0
+This stems from story 6
 ## Writing Test
 
 ### Using Fixture
