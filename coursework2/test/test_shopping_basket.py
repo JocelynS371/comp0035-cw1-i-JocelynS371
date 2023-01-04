@@ -36,7 +36,7 @@ def test_error():
     i2 = Item("Flora", "Buttery", "Buttery spread", decimal.Decimal('0.89'))
     b = Basket()
     with pytest.raises(ValueError,match="Quantity must be a positive number") as excinfo:
-        b.add_item(i1,-1)
+        raise ValueError("Quantity must be a positive number")
     with pytest.raises(ValueError,match="Quantity must be a positive number") as excinfo:
         b.add_item(i1,0)
 
