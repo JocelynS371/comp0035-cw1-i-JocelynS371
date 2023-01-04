@@ -52,15 +52,15 @@ def test_error(i1, b):
         b.add_item(i1, -1)
 
 
-@pytest.mark.parametrize('item,number',[('i1', 638), ('i1', 0),('i1', -1), ('i2', 23), ('i1', 9999999), ('i1', 0.5)])
-def test_edge_case(i1, i2, b, item, number):
+@pytest.mark.parametrize('test_item,number',[('i1', 638), ('i1', 0),('i1', -1), ('i2', 23), ('i1', 9999999), ('i1', 0.5)])
+def test_edge_case(i1, i2, b, test_item, number):
     if number % 1 != 0:
         with pytest.raises(expected_exception=[TypeError, ValueError]):
-            b.add_item(item, number)
+            b.add_item(test_item, number)
     elif number >= 1:
-        b.add_item(item, number)
+        b.add_item(test_item, number)
         assert b.is_empty() is False
-        assert b.get_total_cost() == getattr(item,'price')*number
+        assert b.get_total_cost() == getattr(test_item,'price')*number
     else:
         with pytest.raises(expected_exception=ValueError, match="Quantity must be a positive number"):
-            b.add_item(item, number)
+            b.add_item(test_item, number)
