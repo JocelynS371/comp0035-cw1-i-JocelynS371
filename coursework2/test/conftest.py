@@ -3,8 +3,6 @@ from coursework2.src.shopping_basket import Basket
 from coursework2.src.shopping_basket import Item
 
 import decimal
-from decimal import Decimal
-from reprlib import recursive_repr
 
 @pytest.fixture
 def i1():
