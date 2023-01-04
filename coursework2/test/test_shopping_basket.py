@@ -49,5 +49,5 @@ def test_error(i1, i2, b):
         When an negative number is entered,
         That the basket returens an exception
     """
-    with pytest.raises(ValueError,match="Quantity must be a positive number"):
+    with pytest.raises(ValueError, match="Quantity must be a positive number"):
         b.add_item(i1, -1)
