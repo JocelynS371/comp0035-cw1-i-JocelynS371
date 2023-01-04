@@ -32,9 +32,7 @@ I have written 3 relatively simple test that all ran successfully
 ![image](test_screenshot\test_1_2_3.jpg) 
 However, for the 4th test, which test for a ValueError the code should raise, the test was failed
 ![image](test_screenshot\test_4.jpg) 
-
 ### Using Fixture
-I noticed in my test that the items and baskets are defined repetitively. Therefore, I have created a fixture so part of the code are reused easily.
-
-## Continous Intergration on Github
+I noticed in my test that the items and baskets are defined repetitively. Therefore, I have created a fixture so part of the code are reused easily.   
+The fixture pre-defines the item i1 and basket so that I do not have to define those 2 repetitively.
 
