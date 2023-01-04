@@ -40,6 +40,4 @@ def test_reset(i1,i2,b):
     assert b.get_total_cost()==decimal.Decimal('1.52')*0
 def test_error(i1,i2,b):
     with pytest.raises(ValueError,match="Quantity must be a positive number"):
-        raise ValueError("Quantity must be a positive number")
-    with pytest.raises(ValueError,match="Quantity must be a positive number"):
-        b.add_item(i1,0)
+        b.add_item(i1,-1)
