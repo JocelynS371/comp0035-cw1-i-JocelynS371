@@ -5,8 +5,7 @@ setup(
     version="1.0.0",
     packages=["src"],
     package_dir={
-    "src": "./coursework2/src",
-    },
+    "src": "./coursework2/src",},
     include_package_data=True,
     zip_safe=False,
     install_requires=[],)
