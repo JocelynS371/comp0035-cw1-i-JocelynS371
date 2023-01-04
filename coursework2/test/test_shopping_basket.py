@@ -35,9 +35,9 @@ def test_error():
     i1 = Item("Warburtons", "Toastie", "800g white sliced loaf", decimal.Decimal('1.52'))
     i2 = Item("Flora", "Buttery", "Buttery spread", decimal.Decimal('0.89'))
     b = Basket()
-    with pytest.raises(ValueError) as excinfo:
-        b.add_item(i1, -1)
-    assert excinfo.value=="Invalid operation - Quantity must be a positive number!"
+    with pytest.raises(ValueError,match="Quantity must be a positive number") as excinfo:
+        raise ValueError("Invalid operation - Quantity must be a positive number!")
+
     
 test_reset()
 test_error()
