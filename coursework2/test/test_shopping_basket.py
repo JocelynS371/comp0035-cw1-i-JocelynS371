@@ -1,6 +1,7 @@
 import pytest
 import decimal
 
+
 def test_add_item(i1, i2, b):
     """
         Given item entered is valid,
@@ -52,9 +53,9 @@ def test_error(i1, b):
         b.add_item(i1, -1)
 
 
-@pytest.mark.parametrize('number',[-1, 0, 0.5, 62934, 9999999999, 3.14159,'test'])
+@pytest.mark.parametrize('number', [-1, 0, 0.5, 62934, 9999999999, 3.14159, 'test'])
 def test_edge_case(i1, b, number):
-    """ 
+    """
     This test the ability of the code to
     identify wrong values and handles them
     """
@@ -71,4 +72,5 @@ def test_edge_case(i1, b, number):
         b.add_item(i1, number)
         assert b.is_empty() is False
         assert b.get_total_cost() == i1.price*number
-    else: raise ValueError("unknown input")
+    else:
+        raise ValueError("unknown input")
