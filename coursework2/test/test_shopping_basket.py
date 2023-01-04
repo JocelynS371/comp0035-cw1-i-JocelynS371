@@ -58,17 +58,17 @@ def test_edge_case(i1, b, number):
     This test the ability of the code to
     identify wrong values and handles them
     """
-    if number % 1 != 0:
+    if number is str:
         with pytest.raises(expected_exception=[TypeError, ValueError]):
             b.add_item(i1, number)
-    elif number is str:
+    elif number % 1 != 0:
         with pytest.raises(expected_exception=[TypeError, ValueError]):
+            b.add_item(i1, number)
+    elif number <= 0:
+        with pytest.raises(expected_exception=ValueError, match="Quantity must be a positive number"):
             b.add_item(i1, number)
     elif number >= 1:
         b.add_item(i1, number)
         assert b.is_empty() is False
         assert b.get_total_cost() == i1.price*number
-    elif number <= 0:
-        with pytest.raises(expected_exception=ValueError, match="Quantity must be a positive number"):
-            b.add_item(i1, number)
     else: raise ValueError("unknown input")
