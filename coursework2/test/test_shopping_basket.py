@@ -2,6 +2,7 @@ import pytest
 from coursework2.src.shopping_basket import Basket
 
 import decimal
+from decimal import Decimal
 
 def test_add_item(i1,i2,b):
     """ 
@@ -11,7 +12,7 @@ def test_add_item(i1,i2,b):
         and the new total is updated """
     b.add_item(i1, 1)
     assert b.is_empty() == False
-    assert b.get_total_cost() == decimal.Decimal('1.52')
+    assert b.get_total_cost() ==decimal.Decimal('1.52')
     
     
 def test_remove_item(i1,i2,b):
@@ -23,9 +24,9 @@ def test_remove_item(i1,i2,b):
     b.update_item(i1, 10)
     b.remove_item(i1,2)
     assert b.items[i1] == 10-2
-    assert b.get_total_cost() = decimal.Decimal('1.52')*8
+    assert b.get_total_cost() ==decimal.Decimal('1.52')*8
     b.remove_item(i1)
-    assert b.get_total_cost() == decimal.Decimal('0')
+    assert b.get_total_cost() ==decimal.Decimal('0')
     with pytest.raises(KeyError):
         b.items[i1] == 0
         
@@ -41,7 +42,7 @@ def test_reset(i1,i2,b):
     assert b.is_empty() == False
     b.reset()
     assert b.is_empty() == True
-    assert b.get_total_cost() == decimal.Decimal('1.52')*0
+    assert b.get_total_cost() ==decimal.Decimal('1.52')*0
     
     
 def test_error(i1,i2,b):
