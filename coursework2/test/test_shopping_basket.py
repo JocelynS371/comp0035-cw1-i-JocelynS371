@@ -1,7 +1,6 @@
 import pytest
 import decimal
 
-
 def test_add_item(i1, i2, b):
     """
         Given item entered is valid,
@@ -13,7 +12,7 @@ def test_add_item(i1, i2, b):
     assert b.get_total_cost() == decimal.Decimal('1.52')
 
 
-def test_remove_item(i1, i2, b):
+def test_remove_item(i1, b):
     """
         Given item entered is valid,
         When item is removed to basket,
@@ -29,7 +28,7 @@ def test_remove_item(i1, i2, b):
         b.items[i1] == 0
 
 
-def test_reset(i1, i2, b):
+def test_reset(i1, b):
     """
         Given the basket is filled with item,
         When the basket is reset,
@@ -43,7 +42,7 @@ def test_reset(i1, i2, b):
     assert b.get_total_cost() == decimal.Decimal('1.52')*0
 
 
-def test_error(i1, i2, b):
+def test_error(i1, b):
     """
         Given item entered is valid,
         When an negative number is entered,
@@ -51,3 +50,17 @@ def test_error(i1, i2, b):
     """
     with pytest.raises(ValueError, match="Quantity must be a positive number"):
         b.add_item(i1, -1)
+
+
+@pytest.mark.parametrize('item,number',[('i1', -1), ('i1', 0),('i1', 638), ('i2', 23), ('i1', 10000000), ('i1', 0.5)])
+def test_edge_case(i1, i2, b, item, number):
+    if number >= 1:
+        b.add_item(item, number)
+        assert b.is_empty() is False
+        assert b.get_total_cost() == item.price()*number
+    elif number is not int:
+        with pytest.raises(TypeError):
+            b.add_item(item, number)
+    else:
+        with pytest.raises(ValueError, match="Quantity must be a positive number"):
+            b.add_item(item, number)
