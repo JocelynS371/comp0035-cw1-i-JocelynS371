@@ -12,8 +12,8 @@ def test_add_item(i1,i2,b):
     Then ensure item is added to the list, 
     and the new total is updated """
     b.add_item(i1, 1)
-    assert b.is_empty==False
-    assert b.get_total_cost==decimal.Decimal('1.52')
+    assert b.is_empty()==False
+    assert b.get_total_cost()==decimal.Decimal('1.52')
 def test_remove_item(i1,i2,b):
     """ Given item entered is valid, 
     When item is removed to basket, 
@@ -21,11 +21,11 @@ def test_remove_item(i1,i2,b):
     and the new total is updated """
     b.update_item(i1, 10)
     b.remove_item(i1,1)
-    assert b.get_total_cost==decimal.Decimal('1.52')*9
+    assert b.get_total_cost()==decimal.Decimal('1.52')*9
     b.remove_item(i1)
-    assert b.get_total_cost==decimal.Decimal('1.52')*8
+    assert b.get_total_cost()==decimal.Decimal('1.52')*8
     b.remove_item(i1,-1)
-    assert b.get_total_cost==decimal.Decimal('1.52')*7
+    assert b.get_total_cost()==decimal.Decimal('1.52')*7
 def test_reset(i1,i2,b):
     """Given the basket is filled with item, 
     When the basket is reset, 
