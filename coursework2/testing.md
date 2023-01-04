@@ -27,8 +27,11 @@ This is the combinition of stories 1,2 and 5
 This stems from story 6   
 **Given** item entered is valid, **When** an negative number is entered, **That** the basket returens an exception
 This stems from the user story 7
-## Writing Test
-I have written 
+## Writing and Running Test
+I have written 3 relatively simple test that all ran successfully
+![image](test_screenshot\test_1_2_3.jpg) 
+However, for the 4th test, which test for a ValueError the code should raise, the test was failed
+![image](test_screenshot\test_4.jpg) 
 
 ### Using Fixture
 I noticed in my test that the items and baskets are defined repetitively. Therefore, I have created a fixture so part of the code are reused easily.
