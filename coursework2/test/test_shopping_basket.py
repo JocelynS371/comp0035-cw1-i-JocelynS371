@@ -52,15 +52,23 @@ def test_error(i1, b):
         b.add_item(i1, -1)
 
 
-@pytest.mark.parametrize('test_item,number',[('i1', 638), ('i1', 0),('i1', -1), ('i2', 23), ('i1', 9999999), ('i1', 0.5)])
-def test_edge_case(i1, i2, b, test_item, number):
+@pytest.mark.parametrize('number',[-1, 0, 0.5, 62934, 9999999999, 3.14159,'test'])
+def test_edge_case(i1, b, test_item, number):
+    """ 
+    This test the ability of the code to
+    identify wrong values and handles them
+    """
     if number % 1 != 0:
         with pytest.raises(expected_exception=[TypeError, ValueError]):
-            b.add_item(test_item, number)
+            b.add_item(i1, number)
+    elif number is not float or int:
+        with pytest.raises(expected_exception=[TypeError, ValueError]):
+            b.add_item(i1, number)
     elif number >= 1:
-        b.add_item(test_item, number)
+        b.add_item(i1, number)
         assert b.is_empty() is False
-        assert b.get_total_cost() == getattr(test_item,'price')*number
-    else:
+        assert b.get_total_cost() == i1.price*number
+    elif number <= 0:
         with pytest.raises(expected_exception=ValueError, match="Quantity must be a positive number"):
-            b.add_item(test_item, number)
+            b.add_item(i1, number)
+    else: raise ValueError("unknown input")
