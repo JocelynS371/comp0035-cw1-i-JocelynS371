@@ -25,7 +25,7 @@ def test_remove_item(i1,i2,b):
     assert b.get_total_cost()==decimal.Decimal('1.52')*8
     b.remove_item(i1)
     assert b.get_total_cost()==decimal.Decimal('0')
-with pytest.raises(KeyError):
+    with pytest.raises(KeyError):
         b.items[i1]==0
 def test_reset(i1,i2,b):
     """Given the basket is filled with item, 
