@@ -58,7 +58,7 @@ def test_edge_case(i1, i2, b, item, number):
         b.add_item(item, number)
         assert b.is_empty() is False
         assert b.get_total_cost() == item.price()*number
-    elif number is not int:
+    elif number.is_interger() is False:
         with pytest.raises(TypeError):
             b.add_item(item, number)
     else:
