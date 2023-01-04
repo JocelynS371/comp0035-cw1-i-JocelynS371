@@ -8,3 +8,11 @@ This is my KanBan board. Task are devided based on the MoSCow Technique. The tas
 https://github.com/ucl-comp0035/comp0035-cw-i-JocelynS371.git
 here is the link to my github, where you can see the version history and action. It was not updated regularly in the first few week because it was inconvinent to upload pdfs onto github, when I was working on the requirements and design.
 
+## Linting
+I used Flake8 to lint my code, before linting, the code looked like this
+![image](test_screenshot/unlint.jpg) 
+After linting, it looks like this
+![image](test_screenshot/after_linting.jpg) 
+There are 3 warning ignored, they stemed from the assert statement where a boolean value was compared directly. I choose to ignore this warning because this is a case where the comparision make sense. 
+
+
