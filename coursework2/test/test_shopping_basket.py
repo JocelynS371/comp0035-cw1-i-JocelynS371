@@ -61,7 +61,7 @@ def test_edge_case(i1, b, number):
     if number % 1 != 0:
         with pytest.raises(expected_exception=[TypeError, ValueError]):
             b.add_item(i1, number)
-    elif number is not float or int:
+    elif number is str:
         with pytest.raises(expected_exception=[TypeError, ValueError]):
             b.add_item(i1, number)
     elif number >= 1:
