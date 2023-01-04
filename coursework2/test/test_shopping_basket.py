@@ -6,20 +6,18 @@ import decimal
 from decimal import Decimal
 from reprlib import recursive_repr
 
-def test_add_item():
+def test_add_item(i1,i2,b):
     """ Given item entered is valid, 
     When item is added to basket, 
     Then ensure item is added to the list, 
     and the new total is updated """
-    i1 = Item("Warburtons", "Toastie", "800g white sliced loaf", decimal.Decimal('1.52'))
-    b=Basket()
     b.add_item(i1, 1)
     empty=b.is_empty()
     total=b.get_total_cost()
     assert empty==False
     print(empty)
     assert total==decimal.Decimal('1.52')
-def test_reset():
+def test_reset(i1,i2,b):
     """As a customer, I want to check if the basket is empty, so that I can prepare for the next shopping trip."
     """
     i1 = Item("Warburtons", "Toastie", "800g white sliced loaf", decimal.Decimal('1.52'))
@@ -31,7 +29,7 @@ def test_reset():
     empty=b.is_empty()
     assert empty==True
     assert b.get_total_cost()==decimal.Decimal('1.52')*0
-def test_error():
+def test_error(i1,i2,b):
     i1 = Item("Warburtons", "Toastie", "800g white sliced loaf", decimal.Decimal('1.52'))
     i2 = Item("Flora", "Buttery", "Buttery spread", decimal.Decimal('0.89'))
     b = Basket()
@@ -39,4 +37,3 @@ def test_error():
         raise ValueError("Quantity must be a positive number")
     with pytest.raises(ValueError,match="Quantity must be a positive number") as excinfo:
         b.add_item(i1,0)
-
