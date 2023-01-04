@@ -37,7 +37,6 @@ def test_error():
     b = Basket()
     with pytest.raises(ValueError,match="Quantity must be a positive number") as excinfo:
         b.add_item(i1,-1)
+    with pytest.raises(ValueError,match="Quantity must be a positive number") as excinfo:
+        b.add_item(i1,0)
 
-    
-test_reset()
-test_error()
