@@ -13,6 +13,7 @@ I used Flake8 to lint my code, before linting, the code looked like this
 ![image](test_screenshot/unlint.jpg) 
 After linting, it looks like this
 ![image](test_screenshot/after_linting.jpg) 
-There are 3 warning ignored, they stemed from the assert statement where a boolean value was compared directly. I choose to ignore this warning because this is a case where the comparision make sense. 
+
+The warnings from coursework 1 are ignored as they are not in the scope of this coursework.
 
 
