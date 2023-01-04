@@ -53,7 +53,7 @@ def test_error(i1, b):
 
 
 @pytest.mark.parametrize('number',[-1, 0, 0.5, 62934, 9999999999, 3.14159,'test'])
-def test_edge_case(i1, b, test_item, number):
+def test_edge_case(i1, b, number):
     """ 
     This test the ability of the code to
     identify wrong values and handles them
