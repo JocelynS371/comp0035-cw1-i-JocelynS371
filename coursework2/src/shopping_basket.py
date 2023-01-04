@@ -173,7 +173,7 @@ if __name__ == '__main__':
     i1 = Item("Warburtons", "Toastie", "800g white sliced loaf", decimal.Decimal('1.52'))
     i2 = Item("Flora", "Buttery", "Buttery spread", decimal.Decimal('0.89'))
     b = Basket()
-    b.add_item(i1, -1)
+    b.add_item(i1, 0.5)
     b.add_item(i1, 1)
     b.add_item(i2, 2)
     print(b)
