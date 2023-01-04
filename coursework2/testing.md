@@ -25,10 +25,10 @@ Some of these stories are similar, for example number 1 and 2, it would be a goo
 This is the combinition of stories 1,2 and 5   
 **Given** the basket is filled with item, **When** the basket is reset, **That** the basket becomes empty, and **That** the total cost is 0
 This stems from story 6   
-**Given** item entered is valid, **When** an extreme number is entered, **That** the basket returens an exception
+**Given** item entered is valid, **When** an negative number is entered, **That** the basket returens an exception
 This stems from the user story 7
 ## Writing Test
-Not all of the user stories are considered because they can be repetitive. 
+I have written 
 
 ### Using Fixture
 I noticed in my test that the items and baskets are defined repetitively. Therefore, I have created a fixture so part of the code are reused easily.
