@@ -35,4 +35,9 @@ However, for the 4th test, which test for a ValueError the code should raise, th
 ### Using Fixture
 I noticed in my test that the items and baskets are defined repetitively. Therefore, I have created a fixture so part of the code are reused easily.   
 The fixture pre-defines the item i1 and basket so that I do not have to define those 2 repetitively.
+### Paramitised Test
+I have tried to run a parametised test and it ran
+![image](test_screenshot/edge_case.jpg)   
+![image](test_screenshot/str_test_error.jpg) 
+I got an error from one of the test but the pytest.raise decorator did not catch the error
 
